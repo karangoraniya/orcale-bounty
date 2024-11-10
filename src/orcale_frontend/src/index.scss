@@ -1,8 +1,11 @@
+/* Base styles */
 body {
   font-family: sans-serif;
   font-size: 1.5rem;
+  background-color: #f5f5f5;
 }
 
+/* Image styles */
 img {
   max-width: 50vw;
   max-height: 25vw;
@@ -10,6 +13,7 @@ img {
   margin: auto;
 }
 
+/* Form styles */
 form {
   display: flex;
   justify-content: center;
@@ -20,18 +24,117 @@ form {
   align-items: baseline;
 }
 
-button[type="submit"] {
+/* Button styles */
+button {
   padding: 5px 20px;
   margin: 10px auto;
-  float: right;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &[type="submit"] {
+    padding: 5px 20px;
+    margin: 10px auto;
+    float: right;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
 
+/* Greeting section styles */
 #greeting {
   margin: 10px auto;
   padding: 10px 60px;
   border: 1px solid #222;
+  background-color: white;
+  border-radius: 4px;
+
+  &:empty {
+    display: none;
+  }
 }
 
-#greeting:empty {
-  display: none;
+/* New styles for enhanced UI */
+.exchange-container {
+  max-width: 80vw;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.rate-display {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.historical-rates {
+  margin-top: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #eee;
+      background-color: white;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Loading state styles */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  form {
+    max-width: 90vw;
+  }
+
+  img {
+    max-width: 70vw;
+    max-height: 35vw;
+  }
+
+  .exchange-container {
+    max-width: 95vw;
+  }
 }
