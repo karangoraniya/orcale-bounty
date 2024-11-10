@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "orcale_backend": {
+      "main": "src/orcale_backend/main.mo",
+      "type": "motoko"
+    },
+    "orcale_frontend": {
+      "dependencies": [
+        "orcale_backend"
+      ],
+      "source": [
+        "src/orcale_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "orcale_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
